@@ -1,0 +1,15 @@
+<%= params[:question] %>
+<%case params[:question] %>
+  <% when "I am going to work"%>
+  <p>"Great"</p>
+  <%when "what time is it?"%>
+  <%= Time.now %>
+  <% else %>
+    <% if params[:question].last == "?" %>
+  <p>"Silly question, get dressed and go to work!"</p>7
+  <% else %>
+  <p>"I don't care, get dressed and go to work!"</p>
+  <% end %>
+<% end %>
+
+<%= link_to "Ask a new question", ask_path %>
